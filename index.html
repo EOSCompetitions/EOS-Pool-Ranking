@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pool League Elo Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Pool League Elo Tracker</h1>
+      <p>Rankings update automatically with a maximum 50-point transfer per game.</p>
+    </header>
+
+    <main class="grid">
+      <!-- Left Column: Forms -->
+      <section class="forms-column">
+        
+        <!-- Add Player Card -->
+        <div class="card">
+          <h2>Add New Player</h2>
+          <form id="add-player-form">
+            <label for="player-name-input">Player Name</label>
+            <input 
+              type="text" 
+              id="player-name-input" 
+              placeholder="e.g. John Doe" 
+              required
+            />
+            <button type="submit" id="add-player-btn">Add Player</button>
+          </form>
+        </div>
+
+        <!-- Record Match Card -->
+        <div class="card">
+          <h2>Record Match Result</h2>
+          <form id="match-form">
+            <label for="winner-select">Winner</label>
+            <select id="winner-select" required>
+              <option value="">Select Winner</option>
+            </select>
+
+            <label for="loser-select">Loser</label>
+            <select id="loser-select" required>
+              <option value="">Select Loser</option>
+            </select>
+
+            <button type="submit" id="record-match-btn">Record Result</button>
+          </form>
+        </div>
+
+      </section>
+
+      <!-- Right Column: Leaderboard -->
+      <section class="card leaderboard-card">
+        <h2>Leaderboard</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Player</th>
+              <th>Points</th>
+              <th>W/L</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body">
+            <!-- Dynamic rows rendered by script.js -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <!-- Link your JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
