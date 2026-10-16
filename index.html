@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pool League Elo Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <h1><span class="ball-icon">8</span> Pool League Elo Tracker</h1>
+    <p>Rankings update automatically with a maximum 50-point transfer per game.</p>
+  </header>
+
+  <main class="app-container">
+    
+    <!-- Left Column: Actions -->
+    <div class="left-column">
+      
+      <!-- Card: Add Player -->
+      <section class="card">
+        <h2>Add New Player</h2>
+        <form id="add-player-form">
+          <label for="player-name-input">Player Name</label>
+          <input 
+            type="text" 
+            id="player-name-input" 
+            placeholder="e.g. John Doe" 
+            autocomplete="off"
+            required
+          >
+          <button type="submit" id="add-player-btn" class="btn btn-primary">Add Player</button>
+        </form>
+      </section>
+
+      <!-- Card: Record Match Result -->
+      <section class="card">
+        <h2>Record Match Result</h2>
+        <form id="match-form">
+          <div class="form-group">
+            <label for="winner-select">Winner</label>
+            <div class="select-wrapper">
+              <select id="winner-select" required>
+                <option value="">Select Winner</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="loser-select">Loser</label>
+            <div class="select-wrapper">
+              <select id="loser-select" required>
+                <option value="">Select Loser</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" id="record-match-btn" class="btn btn-secondary">Record Result</button>
+        </form>
+      </section>
+
+    </div>
+
+    <!-- Right Column: Leaderboard -->
+    <div class="right-column">
+      <section class="card leaderboard-card">
+        <h2>Leaderboard</h2>
+        <div class="table-wrapper">
+          <table class="leaderboard-table">
+            <thead>
+              <tr>
+                <th class="col-rank">#</th>
+                <th class="col-player">Player</th>
+                <th class="col-points">Points</th>
+                <th class="col-wl">W/L</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+              <!-- Rendered dynamically by script.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
